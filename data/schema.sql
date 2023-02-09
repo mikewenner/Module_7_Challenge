@@ -8,36 +8,40 @@ DROP TABLE IF EXISTS transaction;
 --Create each table
 -- Create card_holder table
 CREATE TABLE card_holder (
-	id SERIAL PRIMARY KEY,
-	name VARCHAR(30)
+	id INT,
+	name VARCHAR(50)
 );
 
--- Create card_holder table
+-- Create credit_card table
 CREATE TABLE credit_card (
-	cardholder_id SERIAL PRIMARY KEY,
-	card VARCHAR(20)
+	card VARCHAR(20),
+	cardholder_id INT
+	
 );
+
+select * from credit_card
 
 -- Create merchant_category table
 CREATE TABLE merchant_category (
-	id SERIAL PRIMARY KEY,
+	id INT,
 	name VARCHAR(30)
 );
 
 -- Create merchant table
 CREATE TABLE merchant (
-	id SERIAL PRIMARY KEY,
-	name VARCHAR(30),
+	id INT,
+	name VARCHAR(50),
 	id_merchant_category INT
 );
 
 -- Create transaction table
 CREATE TABLE transaction (
-	id SERIAL PRIMARY KEY,
+	id INT,
 	date TIMESTAMP,
-	amount INT,
+	amount FLOAT,
 	card VARCHAR(20),
-	id_merchant BIGINT
+	id_merchant INT
 );
 
-select * from merchant
+select * from transaction
+
