@@ -90,10 +90,22 @@ SELECT
 a.name,
 a.id,
 b.card,
+c.date,
 c.amount
 FROM card_holder as a
 INNER JOIN credit_card as b ON a.id = b.cardholder_id
 INNER JOIN transaction as c ON b.card = c.card
 WHERE c.amount < 2.00
 AND a.id = 2
+
+SELECT 
+a.name,
+a.id,
+b.card,
+c.date,
+c.amount
+FROM card_holder as a
+INNER JOIN credit_card as b ON a.id = b.cardholder_id
+INNER JOIN transaction as c ON b.card = c.card
+WHERE c.amount < 2.00
 AND a.id = 18
